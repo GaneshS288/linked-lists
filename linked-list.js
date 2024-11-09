@@ -5,3 +5,10 @@ export class LinkedList {
     this.size = size;
   }
 }
+
+export class node {
+  constructor(value = null, next = null) {
+    this.value = value;
+    this.next = next;
+  }
+}

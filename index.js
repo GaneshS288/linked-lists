@@ -9,3 +9,4 @@ let newList = new LinkedList({
 });
 
 console.log(newList);
+
