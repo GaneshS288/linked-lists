@@ -2,7 +2,7 @@ export class LinkedList {
   #head;
 
   constructor(head = null, tail = null, size = 0) {
-    this.#head= head;
+    this.#head = head;
     this.tail = tail;
     this._size = size;
   }
@@ -10,9 +10,8 @@ export class LinkedList {
   append(string) {
     const node = new Node(string);
     let currentNode = this.#head;
-  
-    if (!currentNode) this.#head = node;
 
+    if (!currentNode) this.#head = node;
     else {
       while (true) {
         if (!currentNode.next) {
@@ -30,10 +29,17 @@ export class LinkedList {
     let headNode = this.#head;
 
     if (!headNode) this.#head = node;
-
     else {
       node.next = headNode;
       this.#head = node;
+    }
+  }
+
+  size(node = this.#head, sizeCount = 0) {
+    if (!node) return sizeCount;
+    else {
+      sizeCount += 1;
+      return this.size(node.next, sizeCount);
     }
   }
 
