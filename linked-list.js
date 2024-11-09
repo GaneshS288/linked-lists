@@ -1,13 +1,17 @@
 export class LinkedList {
+  #head;
+
   constructor(head = null, tail = null, size = 0) {
-    this.head = head;
+    this.#head= head;
     this.tail = tail;
-    this.size = size;
+    this._size = size;
   }
 
   append(node) {
-    let currentNode = this.head;
-    if (!currentNode) this.head = node;
+    let currentNode = this.#head;
+
+    if (!currentNode) this.#head = node;
+
     else {
       while (true) {
         if (!currentNode.next) {
@@ -21,12 +25,18 @@ export class LinkedList {
   }
 
   prepend(node) {
-    let headNode = this.head;
-    if (!headNode) this.head = node;
+    let headNode = this.#head;
+
+    if (!headNode) this.#head = node;
+    
     else {
       node.next = headNode;
-      this.head = node;
+      this.#head = node;
     }
+  }
+
+  get head() {
+    return this.#head;
   }
 }
 
