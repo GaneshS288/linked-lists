@@ -46,6 +46,20 @@ export class LinkedList {
   get head() {
     return this.#head;
   }
+
+  at(targetIndex) {
+    let currentNode = this.#head;
+
+    if (!currentNode) return "Error : this list is empty";
+
+    for (let currentIndex = 0; currentIndex <= targetIndex; currentIndex++) {
+      if (currentIndex === targetIndex) return currentNode;
+      else if (currentNode.next === null)
+        return `Error: range overflow, this index ${targetIndex} is too high`;
+
+      currentNode = currentNode.next;
+    }
+  }
 }
 
 export class Node {
