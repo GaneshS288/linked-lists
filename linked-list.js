@@ -7,9 +7,10 @@ export class LinkedList {
     this._size = size;
   }
 
-  append(node) {
+  append(string) {
+    const node = new Node(string);
     let currentNode = this.#head;
-
+  
     if (!currentNode) this.#head = node;
 
     else {
@@ -24,11 +25,12 @@ export class LinkedList {
     }
   }
 
-  prepend(node) {
+  prepend(string) {
+    const node = new Node(string);
     let headNode = this.#head;
 
     if (!headNode) this.#head = node;
-    
+
     else {
       node.next = headNode;
       this.#head = node;
@@ -40,7 +42,7 @@ export class LinkedList {
   }
 }
 
-export class node {
+export class Node {
   constructor(value = null, next = null) {
     this.value = value;
     this.next = next;
