@@ -1,12 +1,8 @@
-import { LinkedList } from "./linked-list.js";
+import { LinkedList, node } from "./linked-list.js";
 
-let newList = new LinkedList({
-  value: 10,
-  next: {
-    value: 20,
-    next: null,
-  },
-});
+let list = new LinkedList();
 
-console.log(newList);
+list.append(new node("hello"));
+list.append(new node("world"));
 
+console.log(list);

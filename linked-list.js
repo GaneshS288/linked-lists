@@ -4,6 +4,20 @@ export class LinkedList {
     this.tail = tail;
     this.size = size;
   }
+
+  append(node) {
+    let currentNode = this.head;
+    if (!currentNode) return this.head = node;
+
+    while (true) {
+      if (!currentNode.next) {
+        currentNode.next = node;
+        break;
+      }
+
+      currentNode = currentNode.next;
+    }
+  }
 }
 
 export class node {
