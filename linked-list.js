@@ -7,15 +7,25 @@ export class LinkedList {
 
   append(node) {
     let currentNode = this.head;
-    if (!currentNode) return this.head = node;
+    if (!currentNode) this.head = node;
+    else {
+      while (true) {
+        if (!currentNode.next) {
+          currentNode.next = node;
+          break;
+        }
 
-    while (true) {
-      if (!currentNode.next) {
-        currentNode.next = node;
-        break;
+        currentNode = currentNode.next;
       }
+    }
+  }
 
-      currentNode = currentNode.next;
+  prepend(node) {
+    let headNode = this.head;
+    if (!headNode) this.head = node;
+    else {
+      node.next = headNode;
+      this.head = node;
     }
   }
 }
