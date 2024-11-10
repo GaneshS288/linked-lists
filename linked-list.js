@@ -69,6 +69,15 @@ export class LinkedList {
     }
   }
 
+  shift() {
+    let currentNode = this.#head;
+    if(!currentNode) return "Error : this list is already empty";
+    else {
+      this.#head = currentNode.next;
+      return currentNode;
+    }
+  }
+
   pop() {
     let currentNode = this.#head;
 
