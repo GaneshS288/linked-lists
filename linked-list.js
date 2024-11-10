@@ -107,6 +107,22 @@ export class LinkedList {
       else currentNode = currentNode.next;
     }
   }
+
+  find(string) {
+    let currentIndex = 0;
+    let currentNode = this.#head;
+
+    if(!currentNode) return null;
+    
+    while(true) {
+      if(currentNode.value === string) return currentIndex;
+      else if(currentNode.next === null) return null;
+      else {
+        currentIndex += 1;
+        currentNode = currentNode.next;
+      }
+    }
+  }
 }
 
 export class Node {

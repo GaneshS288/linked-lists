@@ -10,7 +10,8 @@ list.prepend("coffe");
 list.prepend("I don't drink");
 list2.append("ganesh");
 
-console.log(list.shift());
-console.log(list2.shift());
-console.log(list2.shift());
-console.log(list3.shift());
+console.log(list.find('hello'));
+console.log(list.find("coffe"));
+console.log(list.find("hoppey"));
+console.log(list2.find("ganesh"));
+console.log(list3.find("heeehaw"));
