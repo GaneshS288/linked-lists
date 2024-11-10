@@ -87,6 +87,17 @@ export class LinkedList {
       } else currentNode = currentNode.next;
     }
   }
+
+  contains(string) {
+    let currentNode = this.#head;
+    if (!currentNode) return false;
+
+    while (true) {
+      if (currentNode.value === string) return true;
+      else if (currentNode.next === null) return false;
+      else currentNode = currentNode.next;
+    }
+  }
 }
 
 export class Node {
