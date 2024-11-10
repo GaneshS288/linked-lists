@@ -71,7 +71,7 @@ export class LinkedList {
 
   shift() {
     let currentNode = this.#head;
-    if(!currentNode) return "Error : this list is already empty";
+    if (!currentNode) return "Error : this list is already empty";
     else {
       this.#head = currentNode.next;
       return currentNode;
@@ -112,13 +112,28 @@ export class LinkedList {
     let currentIndex = 0;
     let currentNode = this.#head;
 
-    if(!currentNode) return null;
-    
-    while(true) {
-      if(currentNode.value === string) return currentIndex;
-      else if(currentNode.next === null) return null;
+    if (!currentNode) return null;
+
+    while (true) {
+      if (currentNode.value === string) return currentIndex;
+      else if (currentNode.next === null) return null;
       else {
         currentIndex += 1;
+        currentNode = currentNode.next;
+      }
+    }
+  }
+
+  toString() {
+    let values = [];
+    let currentNode = this.#head;
+
+    while (true) {
+      if (currentNode === null) {
+        values.push("null");
+        return values.join(" -> ");
+      } else {
+        values.push(currentNode.value);
         currentNode = currentNode.next;
       }
     }
