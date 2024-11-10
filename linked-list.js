@@ -1,10 +1,8 @@
 export class LinkedList {
   #head;
 
-  constructor(head = null, tail = null, size = 0) {
+  constructor(head = null) {
     this.#head = head;
-    this.tail = tail;
-    this._size = size;
   }
 
   append(string) {
@@ -45,6 +43,16 @@ export class LinkedList {
 
   get head() {
     return this.#head;
+  }
+
+  tail() {
+    let currentNode = this.#head;
+    if (!currentNode) return null;
+
+    while (true) {
+      if (!currentNode.next) return currentNode;
+      else currentNode = currentNode.next;
+    }
   }
 
   at(targetIndex) {
