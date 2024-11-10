@@ -10,6 +10,9 @@ list.prepend("coffe");
 list.prepend("I don't drink");
 list2.append("ganesh");
 
-console.log(list.tail());
-console.log(list2.tail());
-console.log(list3.tail());
+console.log(list.pop());
+console.log(list.pop());
+console.log(list.head);
+console.log(list2.pop());
+console.log(list2.head);
+console.log(list3.pop());

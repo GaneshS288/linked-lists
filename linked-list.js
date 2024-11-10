@@ -47,7 +47,7 @@ export class LinkedList {
 
   tail() {
     let currentNode = this.#head;
-    if (!currentNode) return null;
+    if (!currentNode) return currentNode;
 
     while (true) {
       if (!currentNode.next) return currentNode;
@@ -66,6 +66,25 @@ export class LinkedList {
         return `Error: range overflow, this index ${targetIndex} is too high`;
 
       currentNode = currentNode.next;
+    }
+  }
+
+  pop() {
+    let currentNode = this.#head;
+
+    if (!currentNode) return "Error : this list is already empty";
+    else if (currentNode.next === null) {
+      this.#head = null;
+      return currentNode;
+    }
+
+    while (true) {
+      let nextNode = currentNode.next;
+
+      if (nextNode.next === null) {
+        currentNode.next = null;
+        return nextNode;
+      } else currentNode = currentNode.next;
     }
   }
 }
